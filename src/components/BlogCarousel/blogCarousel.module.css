@@ -1,0 +1,42 @@
+.carouselImage{
+  max-width: 100%;
+  height: 500px;
+}
+
+
+.sliderContent{
+  flex: 0 0 40%;
+  margin-right: 80px;
+}
+
+.sliderImageContainer{
+  flex: 0 0 400px;
+}
+
+@media (max-width: 1024px) {
+  .sliderImageContainer{
+    position: absolute;
+    max-width: 80%;
+    margin-inline: auto;
+    height: 500px;
+    z-index: -1;
+  }
+
+  .sliderContent{
+    flex: 0 0 80%;
+    background-color: #fffffffa;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 786px){
+  .sliderContent{
+    flex: 0 0 90%;
+  }
+
+  .sliderImageContainer{
+    max-width: 100%;
+  }
+}
