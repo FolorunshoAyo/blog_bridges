@@ -179,6 +179,45 @@ export const recentBlogsData = [
 ];
 
 
+export const minifiedPostData = [
+  {
+    authorImage: 'travel.jpg',
+    authorName: 'Author',
+    title: 'Blog Title'
+  },
+  {
+    authorImage: 'travel.jpg',
+    authorName: 'Author',
+    title: 'Blog Title'
+  },
+  {
+    authorImage: 'travel.jpg',
+    authorName: 'Author',
+    title: 'Blog Title'
+  },
+  {
+    authorImage: 'travel.jpg',
+    authorName: 'Author',
+    title: 'Blog Title'
+  },
+  {
+    authorImage: 'travel.jpg',
+    authorName: 'Author',
+    title: 'Blog Title'
+  },
+  {
+    authorImage: 'travel.jpg',
+    authorName: 'Author',
+    title: 'Blog Title'
+  },
+  {
+    authorImage: 'travel.jpg',
+    authorName: 'Author',
+    title: 'Blog Title'
+  }
+]
+
+
 export const allBlogCategories = [
   { name: "Lifestyle" },
   { name: "Travel" },

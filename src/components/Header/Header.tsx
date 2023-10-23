@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { FiChevronRight, FiMenu } from "react-icons/fi";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
+import { usePathname } from 'next/navigation'
 
 type Props = {};
 
@@ -11,6 +12,8 @@ export default function Header({}: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
   const isSignedIn = false;
 
+  const currPath = usePathname()
+  
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
@@ -28,22 +31,22 @@ export default function Header({}: Props) {
         </div>
         <ul className="hidden md:flex md:items-center text-sm space-x-6">
           <li>
-            <Link href="/" className="hover:text-primary transition duration-300">
+            <Link href="/" className={`hover:text-primary transition duration-300 ${currPath === "/"? "text-primary" : ""}`}>
               Home
             </Link>
           </li>
           <li>
-            <Link href="/about" className="hover:text-primary transition duration-300">
+            <Link href="/about" className={`hover:text-primary transition duration-300 ${currPath === "/about"? "text-primary" : ""}`}>
               About
             </Link>
           </li>
           <li>
-            <Link href="#" className="hover:text-primary transition duration-300">
+            <Link href="#" className={`hover:text-primary transition duration-300 ${currPath === "/explore"? "text-primary" : ""}`}>
               Explore
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="hover:text-primary transition duration-300">
+            <Link href="/contact" className={`hover:text-primary transition duration-300 ${currPath === "/contact"? "text-primary" : ""}`}>
               Contact
             </Link>
           </li>
@@ -77,7 +80,7 @@ export default function Header({}: Props) {
           </button>
         </div>
         {/* Black overlay for mobile navigation drawer*/}
-        <div onClick={closeMenu} className={`fixed z-49 bg-black bg-opacity-50 inset-0 h-full transition all duration-200 transform ${
+        <div onClick={closeMenu} className={`fixed z-50 bg-black bg-opacity-50 inset-0 h-full transition all duration-200 transform ${
           menuOpen ? 'w-full' : 'w-0'
         }`}></div>
         <div
@@ -98,22 +101,22 @@ export default function Header({}: Props) {
         <nav className="pt-10 pl-6 text-lg md:text-xl">
           <ul>
             <li className="mb-4">
-              <Link href="/" className="hover:text-primary transition duration-300">
+              <Link href="/" className={`hover:text-primary transition duration-300 ${currPath === "/"? "text-primary" : ""}`}>
                 Home <FiChevronRight className="inline align-middle" />
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/about" className="hover:text-primary transition duration-300">
+              <Link href="/about" className={`hover:text-primary transition duration-300 ${currPath === "/about"? "text-primary" : ""}`}>
                 About <FiChevronRight className="inline align-middle" />
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="#" className="hover:text-primary transition duration-300">
+              <Link href="#" className={`hover:text-primary transition duration-300 ${currPath === "/explore"? "text-primary" : ""}`}>
                 Explore <FiChevronRight className="inline align-middle" />
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="/contact" className="hover:text-primary transition duration-300">
+              <Link href="/contact" className={`hover:text-primary transition duration-300 ${currPath === "/contact"? "text-primary" : ""}`}>
                 Contact <FiChevronRight className="inline align-middle" />
               </Link>
             </li>

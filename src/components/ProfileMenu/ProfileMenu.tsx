@@ -29,7 +29,7 @@ const [menuOpen, setMenuOpen] = useState(false);
       </button>
 
       {menuOpen && (
-        <div className="absolute left-0 mt-2 w-40 bg-white border border-gray rounded shadow-lg">
+        <div className="z-50 absolute left-0 mt-2 w-40 bg-white border border-gray rounded shadow-lg text-sm text-md">
           <ul>
             <li className="px-2 py-1 border-b border-gray hover:bg-primary hover:bg-opacity-80 hover:text-white transition duration-500 cursor-pointer">
               <Link href="/profile">Profile</Link>

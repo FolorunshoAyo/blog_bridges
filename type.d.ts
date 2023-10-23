@@ -23,3 +23,9 @@ type Article = {
     authorImage: string,
     authorName: string
 }
+
+type MinifiedArticle = {
+    authorImage: string,
+    authorName: string,
+    title: string
+}
