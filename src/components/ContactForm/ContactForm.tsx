@@ -23,6 +23,7 @@ export default function ContactForm() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+    
     setFormData({
       ...formData,
       [name]: value,
@@ -42,6 +43,12 @@ export default function ContactForm() {
     // Name validation
     if (formData.name.trim() === "") {
       newErrors.name = "Name is required";
+      isValid = false;
+    }
+
+    // Name validation
+    if (formData.phone.trim() === "") {
+      newErrors.phone = "Phone is required";
       isValid = false;
     }
 
@@ -96,113 +103,32 @@ export default function ContactForm() {
           <p className="mt-4 text-lg text-base-content/70">313-332-8662 <br/> info@jstemplate.net</p>
         </div>
       </div>
-      {/* <div className="p-4">
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white shadow-md rounded-lg lg:w-3/4 p-6"
-        >
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              className={`w-full p-2 border border-gray rounded focus:outline-none focus:border-blue-400 ${
-                errors.name ? "border-red" : ""
-              }`}
-              required
-            />
-            {errors.name && (
-              <p className="text-red-500 text-sm mt-2">{errors.name}</p>
-            )}
-          </div>
-          <div className="mb-4">
-            <label htmlFor="email" className="block text-gray mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className={`w-full p-2 border border-gray rounded focus:outline-none focus:border-blue-400 ${
-                errors.email ? "border-red" : ""
-              }`}
-              required
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-2">{errors.email}</p>
-            )}
-          </div>
-          <div className="mb-4">
-            <label htmlFor="phone" className="block text-gray mb-2">
-              Phone
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full p-2 border border-gray rounded focus:outline-none focus:border-blue-400"
-            />
-          </div>
-          <div className="mb-4">
-            <label htmlFor="message" className="block text-gray mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              className={`w-full p-2 border border-gray rounded focus:outline-none focus:border-blue-400 ${
-                errors.message ? "border-red" : ""
-              }`}
-              rows={5}
-              required
-            ></textarea>
-            {errors.message && (
-              <p className="text-red-500 text-sm mt-2">{errors.message}</p>
-            )}
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="bg-primary bg-opacity-50 text-white py-2 px-4 rounded hover:bg-opacity-80 focus:outline-none transition duration-300"
-            >
-              Submit
-            </button>
-          </div>
-        </form>
-      </div> */}
       <div className="bg-gray-light rounded-xl p-8 md:p-12">
         <h2 className="text-xl md:text-2xl leading-6 font-bold text-base-content mb-8">Leave a Message</h2>
         <form  onSubmit={handleSubmit}>
           <div className="flex flex-wrap md:flex-nowrap items-center gap-4 md:gap-5 mb-4">
-            <input className="w-full focus:outline-none text-sm md:text-base rounded-md border border-base-content border-opacity-10 px-3 md:px-4 py-2.5 md:py-3 placeholder:text-sm md:placeholder:text-base placeholder:text-base-content placeholder:text-opacity-40" type="text" placeholder="Your Name" value={formData.name}
-              onChange={handleChange} />
-            {errors.name && (
-              <p className="text-red-500 text-sm mt-2">{errors.name}</p>
-            )}
-            <input className="w-full focus:outline-none text-sm md:text-base rounded-md border border-base-content border-opacity-10 px-3 md:px-4 py-2.5 md:py-3 placeholder:text-sm md:placeholder:text-base placeholder:text-base-content placeholder:text-opacity-40" type="email" placeholder="Your Email" value={formData.email}
-              onChange={handleChange}/>
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-2">{errors.email}</p>
-            )}
+            <div className="w-full">
+              <input className="w-full focus:outline-none text-sm md:text-base rounded-md border border-base-content border-opacity-10 px-3 md:px-4 py-2.5 md:py-3 placeholder:text-sm md:placeholder:text-base placeholder:text-base-content placeholder:text-opacity-40" type="text" placeholder="Your Name" name="name"  value={formData.name}
+                onChange={handleChange} />
+              {errors.name && (
+                <p className="text-red text-sm mt-2">{errors.name}</p>
+              )}
+            </div>
+            <div className="w-full">
+              <input className="w-full focus:outline-none text-sm md:text-base rounded-md border border-base-content border-opacity-10 px-3 md:px-4 py-2.5 md:py-3 placeholder:text-sm md:placeholder:text-base placeholder:text-base-content placeholder:text-opacity-40" type="email" placeholder="Your Email" name="email" value={formData.email}
+                onChange={handleChange}/>
+              {errors.email && (
+                <p className="text-red text-sm mt-2">{errors.email}</p>
+              )}
+            </div>
           </div>
           
-          <input className="w-full focus:outline-none text-sm md:text-base rounded-md border border-base-content border-opacity-10 px-3 md:px-4 py-2.5 md:py-3 placeholder:text-sm md:placeholder:text-base placeholder:text-base-content placeholder:text-opacity-40" type="tell" placeholder="Phone number" value={formData.phone}
+          <input className="w-full focus:outline-none text-sm md:text-base rounded-md border border-base-content border-opacity-10 px-3 md:px-4 py-2.5 md:py-3 placeholder:text-sm md:placeholder:text-base placeholder:text-base-content placeholder:text-opacity-40" type="tell" placeholder="Phone number" name="phone" value={formData.phone}
               onChange={handleChange} />
           {errors.phone && (
             <p className="text-red text-sm mt-2">{errors.phone}</p>
           )}    
-          <textarea className="w-full focus:outline-none text-sm md:text-base rounded-md border border-base-content border-opacity-10 px-3 md:px-4 py-2.5 md:py-3 placeholder:text-sm md:placeholder:text-base placeholder:text-base-content placeholder:text-opacity-40 h-36 mt-4" placeholder="Write your message..." value={formData.message}
+          <textarea className="w-full focus:outline-none text-sm md:text-base rounded-md border border-base-content border-opacity-10 px-3 md:px-4 py-2.5 md:py-3 placeholder:text-sm md:placeholder:text-base placeholder:text-base-content placeholder:text-opacity-40 h-36 mt-4" placeholder="Write your message..." name="message" value={formData.message}
               onChange={handleChange}></textarea>
           {errors.message && (
             <p className="text-red text-sm mt-2">{errors.message}</p>

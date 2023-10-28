@@ -34,7 +34,7 @@ export default function Footer({}: Props) {
                 <Link className="hover:text-primary transition duration-300" href="/about">About</Link>
               </li>
               <li className="mb-2">
-                <Link className="hover:text-primary transition duration-300" href="#">Explore</Link>
+                <Link className="hover:text-primary transition duration-300" href="/explore">Explore</Link>
               </li>
               <li className="mb-2">
                 <Link className="hover:text-primary transition duration-300" href="/contact">Contact</Link>

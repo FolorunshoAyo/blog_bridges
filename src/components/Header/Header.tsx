@@ -41,7 +41,7 @@ export default function Header({}: Props) {
             </Link>
           </li>
           <li>
-            <Link href="#" className={`hover:text-primary transition duration-300 ${currPath === "/explore"? "text-primary" : ""}`}>
+            <Link href="/explore" className={`hover:text-primary transition duration-300 ${currPath === "/explore"? "text-primary" : ""}`}>
               Explore
             </Link>
           </li>
@@ -111,7 +111,7 @@ export default function Header({}: Props) {
               </Link>
             </li>
             <li className="mb-4">
-              <Link href="#" className={`hover:text-primary transition duration-300 ${currPath === "/explore"? "text-primary" : ""}`}>
+              <Link href="/explore" className={`hover:text-primary transition duration-300 ${currPath === "/explore"? "text-primary" : ""}`}>
                 Explore <FiChevronRight className="inline align-middle" />
               </Link>
             </li>

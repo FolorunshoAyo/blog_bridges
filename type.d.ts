@@ -27,5 +27,11 @@ type Article = {
 type MinifiedArticle = {
     authorImage: string,
     authorName: string,
-    title: string
+    title: string,
+    isLast?: boolean
+}
+
+type BlogCategory = {
+    name: string,
+    posts: number
 }

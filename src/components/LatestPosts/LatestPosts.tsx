@@ -11,13 +11,14 @@ export default function LatestPosts({ latestPosts }: Props) {
         <h2 className='text-base-content font-bold text-2xl'>
             Latest Posts
         </h2>
-        <div className='grid grid-cols-1 gap-6 mt-8'>
+        <div className='grid grid-cols-1 gap-4 mt-2'>
             {latestPosts.map((post, index) => (
                 <MinifiedPost 
                     key={index}
                     authorImage={post.authorImage}
                     authorName={post.authorName}
                     title={post.title}
+                    isLast={(index + 1) === latestPosts.length}
                 />
             ))}
         </div>
