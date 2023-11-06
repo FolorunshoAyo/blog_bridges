@@ -14,7 +14,7 @@ export default function BlogCategories({ allCategories }: Props) {
     };
 
   return (
-    <div className={`relative rounded-xl border border-base-content border-opacity-10 p-8 transition duration-500 ${viewMore? "" : "max-h-[500px] overflow-y-hidden"}`}>
+    <div className={`relative rounded-xl border border-base-content border-opacity-10 p-8 transition-all duration-500 ${viewMore? "" : "max-h-[600px] overflow-y-hidden"}`}>
         <h4 className="text-xl font-semibold leading-6 text-base-content">Category</h4>
         <div className="pt-6">
             {
@@ -26,7 +26,7 @@ export default function BlogCategories({ allCategories }: Props) {
                 ))
             }
         </div>
-        <div className={`w-full flex justify-center items-center p-4 text-primary bg-gradient-to-t from-white/80 to-transparent ${viewMore? "" : "h-[50px] absolute bottom-0 right-0"}`}>
+        <div className={`w-full flex justify-center items-center p-4 text-primary bg-gradient-to-t from-white/80 to-transparent ${viewMore? "" : "h-[50px] absolute bottom-0 left-0 right-0"}`}>
             <button onClick={toggleViewMore} style={{width: "50%"}} className='flex items-center justify-center'>
                 {
                     viewMore?

@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import BlogListItem from '../BlogListItem.tsx/BlogListItem'
 
 type Props = {
@@ -18,7 +19,7 @@ export default function BlogListings({ blogs }: Props) {
             </div>
         </div>
         <div className="flex items-center justify-center mt-8">
-            <a className="p-4 border border-secondary rounded-lg text-gray uppercase text-sm hover:bg-secondary hover:text-white transition duration-300" href="/blog">View All Post</a>
+            <a className="p-4 border border-secondary rounded-lg text-gray uppercase text-sm hover:bg-secondary hover:text-white transition duration-300" href="/blog">View More Post</a>
         </div>
     </div>
   )
