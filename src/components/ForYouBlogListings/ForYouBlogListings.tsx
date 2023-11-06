@@ -1,5 +1,5 @@
 import React from "react";
-import BlogListItem from "../BlogListItem.tsx/BlogListItem";
+import BlogListItem from "../BlogListItem/BlogListItem";
 import { motion } from "framer-motion";
 
 type Props = {
@@ -11,7 +11,7 @@ export default function ForYouBlogListings({ blogs }: Props) {
     <motion.div initial={{ opacity: 0, y: 10, x: 0 }} animate={{ opacity: 1, y: 0, x: 0 }} transition={{ duration: 0.5 }}>
       <div className="w-full">
         <div className="grid grid-cols-1 gap-5">
-          {blogs.map((blog, index) => (
+          {blogs.map((blog: Article, index: number) => (
             <BlogListItem key={index} blog={blog} />
           ))}
         </div>

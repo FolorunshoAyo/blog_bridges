@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import BlogListItem from '../BlogListItem.tsx/BlogListItem'
+import BlogListItem from '../BlogListItem/BlogListItem'
 
 type Props = {
     blogs: Article[]

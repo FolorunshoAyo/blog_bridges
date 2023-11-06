@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import BlogListItem from "../BlogListItem.tsx/BlogListItem";
+import BlogListItem from "../BlogListItem/BlogListItem";
 import { motion } from "framer-motion";
 import { fetchForYouData } from "../../../util/mockData";
 
@@ -9,14 +9,10 @@ type Props = {
 
 export default function FollowingBlogListings({ blogs }: Props) {
   const [data, setData] = useState<Article[]>(blogs);
-  const [page, setPage] = useState<number>(1);
+  const [page, setPage] = useState<number>(2);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   // Fetch data function
   const fetchData = async () => {
@@ -58,6 +54,7 @@ export default function FollowingBlogListings({ blogs }: Props) {
         {
           hasMore &&
             <button
+            onClick={fetchData}
             className="p-4 border border-secondary rounded-lg text-gray uppercase text-sm hover:bg-secondary hover:text-white transition duration-300"
             >
                {isLoading ? 'Loading...' : 'View More Post'}
